@@ -37,12 +37,28 @@ public class UserRegistration {
             System.out.println("Entered a invalid Last name");
         }
     }
+
+    /**
+     * @description Private Method for validating the user input of email
+     *
+     */
+    private void emailValidation(){
+        System.out.println("email :");
+        String email = scanner.nextLine();
+        pattern = Pattern.matches("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,4}+)*$",email);
+        if(pattern){
+            System.out.println("Entered a valid email");
+        }else {
+            System.out.println("Entered a invalid email");
+        }
+
+    }
     /**
      * @description Main method to create the objects and for calling the methods
      * @param args
      */
     public static void main (String[] args){
         UserRegistration User = new UserRegistration();
-        User.lastNameValidation();
+        User.emailValidation();
     }
 }
