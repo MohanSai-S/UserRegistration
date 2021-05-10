@@ -73,12 +73,13 @@ public class UserRegistration {
      * Rule1 Password should be minimum 8 Characters
      * Rule2 Password should contain atleast one upper case Letter
      * Rule3 Password should contain atleast one numeric value
+     * Rule4 Password should contain atleast one Special Character
      */
     private void passwordValidation(){
 
         System.out.println("Password:");
         String password = scanner.nextLine();
-        pattern = Pattern.matches("(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}",password);
+        pattern = Pattern.matches("(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-])[a-zA-Z0-9!@#$%^&*()_+=-]{8,}",password);
         if(pattern){
             System.out.println("Entered a valid Password");
         }else {
