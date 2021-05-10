@@ -59,11 +59,28 @@ public class UserRegistration {
     private void mobileNumberValidation(){
         System.out.println("Mobile number:");
         String mobileNumber = scanner.nextLine();
-        pattern = Pattern.matches("^[0-9]{2} [0-9]{10}",mobileNumber);
+        pattern = Pattern.matches("^[0-9]{2} [0-9]{10}$",mobileNumber);
         if(pattern){
             System.out.println("Entered a valid Mobile number");
         }else {
             System.out.println("Entered a invalid Mobile number");
+        }
+
+    }
+
+    /**
+     * @description Private Method for validating the user input of password
+     * Rule1 Passwrod should be minimum 8 Characters
+     */
+    private void passwordValidation(){
+
+        System.out.println("Password:");
+        String password = scanner.nextLine();
+        pattern = Pattern.matches("^[a-zA-Z0-9]{8,}",password);
+        if(pattern){
+            System.out.println("Entered a valid Password");
+        }else {
+            System.out.println("Entered a invalid Password");
         }
 
     }
@@ -73,6 +90,6 @@ public class UserRegistration {
      */
     public static void main (String[] args){
         UserRegistration User = new UserRegistration();
-        User.mobileNumberValidation();
+        User.passwordValidation();
     }
 }
