@@ -51,6 +51,20 @@ public class UserRegistration {
         }else {
             System.out.println("Entered a invalid email");
         }
+    }
+
+    /**
+     * @description Private Method for validating the user input of mobile number
+     */
+    private void mobileNumberValidation(){
+        System.out.println("Mobile number:");
+        String mobileNumber = scanner.nextLine();
+        pattern = Pattern.matches("^[0-9]{2} [0-9]{10}",mobileNumber);
+        if(pattern){
+            System.out.println("Entered a valid Mobile number");
+        }else {
+            System.out.println("Entered a invalid Mobile number");
+        }
 
     }
     /**
@@ -59,6 +73,6 @@ public class UserRegistration {
      */
     public static void main (String[] args){
         UserRegistration User = new UserRegistration();
-        User.emailValidation();
+        User.mobileNumberValidation();
     }
 }
